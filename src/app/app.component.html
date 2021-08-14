@@ -1,0 +1,13 @@
+<ul>
+  <li><a href="">Home</a></li>
+  <li><a href="/automobili">Svi automobili</a></li>
+
+  <div *ngIf="authService.getUser()">
+    <li style="float:right"><a class="active" href="/create">Create</a></li>
+  </div>
+
+</ul>
+<!--<a href = "/automobili">Svi automobili</a><br>
+<a href = "/create">Dodaj automobil</a> -->
+<app-footer></app-footer>
+<router-outlet></router-outlet>

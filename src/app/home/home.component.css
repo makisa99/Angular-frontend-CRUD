@@ -1,0 +1,21 @@
+img{
+  max-width:150px;
+  max-height:150px;
+  border: 1px solid gray;
+}
+.peding{
+  padding-top: 20px;
+  padding-left:10px;
+}
+.sekcija{
+  border-radius: 25px;
+  border: 2px solid gray;
+  padding: 20px;
+  width: 60%;
+  color:white;
+}
+ul.no-bullets {
+  list-style-type: none;
+  margin: 0;
+  padding: 5px;
+}

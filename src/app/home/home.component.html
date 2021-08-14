@@ -1,0 +1,33 @@
+<div class="peding">
+  <span *ngIf="authService.getUser()"><p style="color:white">Editovanje:</p></span>
+  <input [(ngModel)]="marka" placeholder="Marka" type="text">
+  <span *ngIf="authService.getUser()">
+  <input [(ngModel)]="model" placeholder="Model" type="text">
+  <input [(ngModel)]="godiste" placeholder="Godiste" type="number">
+  <input [(ngModel)]="gorivo" placeholder="Gorivo" type="text">
+  <input [(ngModel)]="slika" placeholder="Slika" type="text">
+  </span>
+  <button (click)="getByMarka()">Filter marke automobila</button>
+
+  <div *ngIf="automobili|async as automobil">
+    <ul *ngFor="let a of automobil" class="no-bullets">
+      <!--<div style = "color:white"> -->
+      <div class="sekcija">
+        <li>
+
+          <img src="{{a.slika}}">
+          {{a.marka}}
+          {{a.model}}
+          {{a.godiste}}
+          {{a.gorivo}}
+          <a href="/automobili/{{a.id}}">Detaljnije</a>
+          <div *ngIf="authService.getUser()">
+            <button (click)="edit(a.id)">Update</button>
+            <button (click)="delete(a.id)">Delete</button>
+          </div>
+
+
+        </li>
+      </div>
+    </ul>
+  </div>
